@@ -9,6 +9,9 @@ router.get('/', function(req, res, next) {
 });
 
 router.post('/add', (req,res) => UsersInstance.addUser(req,res));
+router.get('/users', (req,res) => UsersInstance.sendUser(req,res));
+router.get('/users/:id', (req,res) => UsersInstance.getUserById(req,res));
+router.put('/users/:id', (req,res) => UsersInstance.modify(req,res));
 
 
 module.exports = router;
