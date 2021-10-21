@@ -50,6 +50,18 @@ class UsersControllers {
 
         return res. sendStatus(404)
     }
+
+    delete(req, res) {
+        const id = req.params.id
+        console.log(id)
+        console.log(this.users)
+        const userIndex = this.users.findIndex(user => user.id == id)
+        console.log(userIndex)
+        this.users.splice(userIndex, 1)
+
+        return res.send()
+    }
+
 }
 
 module.exports = UsersControllers
